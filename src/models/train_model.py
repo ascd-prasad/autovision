@@ -16,24 +16,25 @@ warnings.filterwarnings("ignore")
 from sklearn.metrics import precision_recall_curve, accuracy_score, f1_score, precision_score, recall_score
 from tensorflow.keras.preprocessing import image
 
+image_size = 256
+target_size = (256, 256)
+batch_size = 100
+seed = 7
+nb_epoch = 100
+width = 256
+height = 256
 
 def build_model(car_train_image_details):
     # Creating a Dictionary of training image classes.
     num_classes = car_train_image_details['Image class'].unique()
     label_class_dict = dict(zip(car_train_image_details['class'], car_train_image_details['Image class']))
     print(label_class_dict)
-    image_size = 256
-    target_size = (256, 256)
-    batch_size = 100
-    seed = 7
-    nb_epoch = 100
-    width = 256
-    height = 256
+
     inception_model = define_model(width, height)
     print(inception_model.summary())
     pathToTrainData = 'Dataset/Car Images/Train Images'
-    train_generator, validation_generator = define_generators(pathToTrainData)
-    #train_generator = build_train_data(car_train_image_details, batch_size=batchsize)
+    train_generator, validation_generator = define_generators(pathToTrainData,label_class_dict)
+    #train_generator = build_train_data(car_train_image_details, batch_size=batchsize,num_classes)
     save_callback = define_callbacks()
     model_history = inception_model.fit(
         train_generator,
@@ -60,7 +61,7 @@ def define_model(width, height):
     return model
 
 
-def build_train_data(data, batch_size):
+def build_train_data(data, batch_size,num_classes):
     index = np.random.randint(0, data.shape[0], size=batch_size)
     train_images = np.zeros(shape=(batch_size, width, height, 3))
     bounding_boxes = np.zeros(shape=(batch_size, 4))
@@ -95,7 +96,7 @@ def build_train_data(data, batch_size):
         return train_images, [class_labels, bounding_boxes]
 
 
-def define_generators(pathToTrainData):
+def define_generators(pathToTrainData,label_class_dict):
     train_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
         rotation_range=360,
         width_shift_range=0.3,
