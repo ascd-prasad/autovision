@@ -17,7 +17,8 @@ sys.path.append("..")
 
 # from utils import visualization_utils as vis_util
 print('current path:',os.getcwd())
-model = tf.saved_model.load('/models/saved_model.pb')
+saved_model_path = 'models/detection_model/saved_model'
+model = tf.saved_model.load(saved_model_path)
 label_class_dict = pickle.load(open('label_class_dict.pkl', 'rb'))
 
 app = Flask(__name__,template_folder='templates')
@@ -112,7 +113,7 @@ def uploaded_file(filename):
             box = output['Box coordinates'][i]
             
             #Draw rectangle - (ymin, xmin, ymax, xmax)
-            img = cv2.rectangle(img, (box[1], box[0]), (box[3], box[2]), (0,255,0), 2)
+            img = cv2.rectangle(img, (box[1], box[0]), (box[3], box[2]), (0,0,255), 2)
             
             #Add Label - Class name and confidence level
             label = output['Classes'][i] + ': ' + str(round(output['Scores'][i],2))
