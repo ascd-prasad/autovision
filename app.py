@@ -31,10 +31,26 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1] in app.config['ALLOWED_EXTENSIONS']
 
 
-@app.route('/')
+#@app.route('/')
 def index():
     return render_template('index.html')
 
+@app.route('/')
+def login():
+    return render_template("login.html")
+database={'yafar':'123','vijay':'123','prasad':'123','Preetika':'123','jayshima':'123'}
+
+@app.route('/form_login',methods=['POST','GET'])
+def form_login():
+    name1=request.form['username']
+    pwd=request.form['password']
+    if name1 not in database:
+        return render_template('login.html',info='Invalid User')
+    else:
+        if database[name1]!=pwd:
+            return render_template('login.html',info='Invalid Password')
+        else:
+            return render_template('home.html',name=name1)
 
 @app.route('/upload', methods=['POST'])
 def upload():
