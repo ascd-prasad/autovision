@@ -75,10 +75,21 @@
                 <div class="row">
                     <div class="col-md-6 col-lg-3">
                         <div class="img-block mb-5">
+                            <img src="{{url_for('static',filename='images/Girijesh.jpeg')}}"
+                                 class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+                            <div class="content mt-2">
+                                <h4>Girijesh Prasad</h4>
+                                <p class="text-muted">Senior manager Data ASG, Morgan Stanley</p>
+                                <p class="short-text">Mentor at Great Learning for Artificial Intelligence and Machine Learning</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="img-block mb-5">
                             <img src="{{url_for('static',filename='images/Prasad.jpeg')}}"
                                 class="img-fluid  img-thumbnail rounded-circle" alt="image1">
                             <div class="content mt-2">
-                                <h4>Prasad</h4>
+                                <h4>SCD Prasad Atmala</h4>
                                 <p class="text-muted">Senior Associate, Cognizant</p>
                                 <p class="short-text">Having 10+ years of experience in IT industry as mainframes Developer.
                                     Worked in various roles such as Developer,Tester and lead in projects related to Cards, Banking and finance fields.</p>
@@ -103,7 +114,7 @@
                             <img src="{{url_for('static',filename='images/vijaya.png')}}"
                                 class="img-fluid  img-thumbnail rounded-circle" alt="image1">
                             <div class="content mt-2">
-                                <h4>Vijay</h4>
+                                <h4>Madeti Vijayabhargava</h4>
                                 <p class="text-muted">HRIS Lead, Smiths Group Plc</p>
                                 <p class="short-text">As HRIS Lead, I support various systems and processes for HR, like Talent Acquisition system, HR case management system, Onboarding system (Enboarder). My job also requires me to generate various reports and statistics from these systems.</p>
                             </div>
@@ -111,12 +122,12 @@
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="img-block mb-5">
-                            <img src="{{url_for('static',filename='images/Jaysimha.png')}}"
+                            <img src="{{url_for('static',filename='images/Jaysimha.jpeg')}}"
                                 class="img-fluid  img-thumbnail rounded-circle" alt="image1">
                             <div class="content mt-2">
                                 <h4>Jaysimha reddy</h4>
-                                <p class="text-muted">Senior Consulting Manager, Cognizant</p>
-                                <p class="short-text"></p>
+                                <p class="text-muted">Delivery Lead, Cognizant</p>
+                                <p class="short-text">I have around 17 years of experience and working as an Artificial Intelligence and Analytics delivery lead in Cognizant.</p>
                             </div>
                         </div>
                     </div>
@@ -167,7 +178,7 @@
 
     <div class="container">
         <div id="footer-wrapper">
-            &copy; All Rights Reserved 2021.
+            &copy; All Rights Reserved 2022.
         </div>
     </div>
 <!--    <form action="upload" method="post" enctype="multipart/form-data">-->
@@ -197,8 +208,8 @@
         reader.onload = function (event) {
             var img = document.getElementById('imagen');
             img.src = event.target.result;
-            img.width = 500;
-            img.height = 500;
+            img.width = 1500;
+            img.height = 1500;
         }
         reader.readAsDataURL(file);
     }
