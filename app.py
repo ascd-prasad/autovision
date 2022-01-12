@@ -1,15 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 from werkzeug.utils import secure_filename
-import numpy as np
-import os
 import sys
-import pandas as pd
+import models
 import tensorflow as tf
 import cv2
-import matplotlib.pyplot as plt
-import seaborn as sns
 from PIL import Image
-#import models
 import pickle
 import os
 
@@ -133,7 +128,7 @@ def uploaded_file(filename):
             
             #Add Label - Class name and confidence level
             label = output['Classes'][i] + ': ' + str(round(output['Scores'][i],2))
-            img = cv2.putText(img, label, (box[1], box[0]-10), cv2.FONT_HERSHEY_TRIPLEX, 0.8, (255,255,255), 1,cv2.LINE_AA)
+            img = cv2.putText(img, label, (box[1], box[0]-10), cv2.FONT_HERSHEY_TRIPLEX, 0.8, (255,120,130), 1,cv2.LINE_AA)
         
         #Conver BGR image to RGB to use with Matplotlib
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
