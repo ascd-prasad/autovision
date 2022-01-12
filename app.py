@@ -1,12 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 from werkzeug.utils import secure_filename
 import sys
-import models
 import tensorflow as tf
 import cv2
 from PIL import Image
 import pickle
-
+import os
 
 sys.path.append("..")
 
@@ -20,11 +19,9 @@ app = Flask(__name__,template_folder='templates')
 app.config['UPLOAD_FOLDER'] = 'uploads/'
 app.config['ALLOWED_EXTENSIONS'] = set(['png', 'jpg', 'jpeg'])
 
-
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1] in app.config['ALLOWED_EXTENSIONS']
-
 
 #@app.route('/')
 def index():
@@ -138,3 +135,6 @@ def uploaded_file(filename):
 
     return send_from_directory(app.config['UPLOAD_FOLDER'],
                                filename)
+
+if __name__ == "__main__":
+    app.run(debug=True)
