@@ -6,7 +6,7 @@ import tensorflow as tf
 import cv2
 from PIL import Image
 import pickle
-import os
+
 
 sys.path.append("..")
 
@@ -138,6 +138,3 @@ def uploaded_file(filename):
 
     return send_from_directory(app.config['UPLOAD_FOLDER'],
                                filename)
-
-if __name__ == "__main__":
-    app.run(debug=True)
