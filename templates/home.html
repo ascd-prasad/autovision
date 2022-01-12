@@ -1,0 +1,269 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body bgcolor="teal">
+<br>
+<h1 align="center">Welcome {{name}} !</h1>
+
+</body>
+</html>
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">
+</head>
+
+<body>
+    <div class="container header">
+        
+        <div class="row naver">
+            <div class="col-md-6">
+                <span class="logo">Welcome {{name}} !</span>
+            </div>
+            <div class="col-md-6">
+                <nav class="nav">
+                    <a class="nav-link" href="#about">About Project</a>
+                    <a class="nav-link" href="#team">Team</a>
+                    <a class="nav-link" href="#form">Car Detection Form</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="about content" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Car Detection Project</h1>
+                    <p>Computer  vision  can  be  used  to  automate  supervision  and  generate  action  appropriate  action  trigger  
+                    if  the  event  is predicted from the image of interest. For example a car moving on the road can be easily identified 
+                    by a camera as make of the car, type, colour, number plates etc.</p>
+
+                    <p>Traditional way of Car identification relies on manual human observation.
+                        Through manual observation, it is practically difficult to remember and efficiently distinguish between
+                         the wide variety of vehicle makes and models. It becomes a laborious and time-consuming task for a human observer
+                          to monitor and observe the multitude of screens and record the incoming or outgoing makes and models or to even spot 
+                          the make and model being looked for.                        
+                        </p>
+
+                        <p>The Cars dataset contains 16,185 images of 196 classes of cars. The data is split into 8,144 training images and 8,041 testing 
+                            images, where each class has been split roughly in a 50-50 split. Classes are typically at the level of Make, Model, Year,
+                             e.g. 2012 Tesla Model S or 2012 BMW M3 coupe. 
+                            </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="team">
+        <section class="team text-center py-2">
+            <div class="container">
+                <div class="header my-5">
+                    <h1>Meet our Team </h1>
+                    <p class="text-muted">Meet and Greet our Team Members</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="img-block mb-5">
+                            <img src="{{url_for('static',filename='images/Girijesh.jpeg')}}"
+                                 class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+                            <div class="content mt-2">
+                                <h4>Girijesh Prasad</h4>
+                                <p class="text-muted">Senior manager Data ASG, Morgan Stanley</p>
+                                <p class="short-text">Mentor at Great Learning for Artificial Intelligence and Machine Learning</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="img-block mb-5">
+                            <img src="{{url_for('static',filename='images/Prasad.jpeg')}}"
+                                class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+                            <div class="content mt-2">
+                                <h4>SCD Prasad Atmala</h4>
+                                <p class="text-muted">Senior Associate, Cognizant</p>
+                                <p class="short-text">Having 10+ years of experience in IT industry as mainframes Developer.
+                                    Worked in various roles such as Developer,Tester and lead in projects related to Cards, Banking and finance fields.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 ">
+                        <div class="img-block mb-5">
+                            <img src="{{url_for('static',filename='images/Preetika.png')}}"
+                                class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+                            <div class="content mt-2">
+                                <h4>Preetika Arora</h4>
+                                <p class="text-muted">Senior Engineering Manager, Target Corporation</p>
+                                <p class="short-text">Having 12 years of experience in IT industry working in multiple domains like Banking, Healthcare, Travel and Retail Domain.
+                                    As a Senior Engineering Manager leading the development of web applications for Retail Domain using Java, J2EE, Webservices, Cloud Technologies, Python,AI and ML.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="img-block mb-5">
+                            <img src="{{url_for('static',filename='images/vijaya.png')}}"
+                                class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+                            <div class="content mt-2">
+                                <h4>Madeti Vijayabhargava</h4>
+                                <p class="text-muted">HRIS Lead, Smiths Group Plc</p>
+                                <p class="short-text">As HRIS Lead, I support various systems and processes for HR, like Talent Acquisition system, HR case management system, Onboarding system (Enboarder). My job also requires me to generate various reports and statistics from these systems.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="img-block mb-5">
+                            <img src="{{url_for('static',filename='images/Jaysimha.jpeg')}}"
+                                class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+                            <div class="content mt-2">
+                                <h4>Jaysimha reddy</h4>
+                                <p class="text-muted">Delivery Lead, Cognizant</p>
+                                <p class="short-text">I have around 17 years of experience and working as an Artificial Intelligence and Analytics delivery lead in Cognizant.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="img-block mb-5">
+                            <img src="{{url_for('static',filename='images/yafar.jpg')}}"
+                                class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+                            <div class="content mt-2">
+                                <h4>Yafarkhan</h4>
+                                <p class="text-muted">System Engineer</p>
+                                <p class="short-text">Certified computer engineer from Ministry of Municipality and Urban Planning, Qatar.
+                                     Who enjoys being part of, as well as leading, a successful and productive team. Hands on Software developement, Network, AV programming, Project Management and System Integration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="container" id="form">
+        <div id="form-container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Image Object Recognition Form</h1>
+                </div>
+            </div>
+            <form action="upload" method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+<!--                        <label for="imagefile">Upload the image file</label>-->
+<!--                        <input type="file" class="form-control-file" id="imagefile">-->
+                        <input type="file" name="file" id="inputFile1"><br/><br/>
+                        <input type="submit" class="btn btn-primary" value="Identify Car">
+                    </div>
+
+<!--                    <button id="submit-btn" type="button" class="btn btn-primary">Identify</button>-->
+
+                </div>
+            </div>
+                <div class="col-lg-8">
+                    <img id="imagen"><br/>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="footer-wrapper">
+            &copy; All Rights Reserved 2022.
+        </div>
+    </div>
+<!--    <form action="upload" method="post" enctype="multipart/form-data">-->
+<!--        <div class="row">-->
+<!--            <div class="col-lg-4">-->
+<!--                <input type="file" name="file" id="inputFile1"><br/><br/>-->
+<!--                <input type="submit" value="Car Prediction">-->
+<!--            </div>-->
+<!--            <div class="col-lg-8">-->
+<!--                <img id="imagen"><br/>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+<!--    </form>-->
+    </div>
+    </div>
+</body>
+<script>
+    function init() {
+        var inputFile = document.getElementById('inputFile1');
+        inputFile.addEventListener('change', mostrarImagen, false);
+    }
+    function mostrarImagen(event) {
+        var file = event.target.files[0];
+        var reader = new FileReader();
+        reader.onload = function (event) {
+            var img = document.getElementById('imagen');
+            img.src = event.target.result;
+            img.width = 1500;
+            img.height = 1500;
+        }
+        reader.readAsDataURL(file);
+    }
+    window.addEventListener('load', init, false);
+</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('nav a').on('click', function () {
+                var divSection = $(this).attr('href');
+                $('html, body').animate({
+                    scrollTop: $(divSection).offset().top
+                }, 2000);
+            });
+
+            var sticky = $('.naver').offset().top;
+
+            $(window).scroll(function () {
+                console.log('scrollin', window.pageYOffset)
+                console.log('scrollin => sticky', sticky)
+                if (window.pageYOffset > sticky) {
+                    $('.naver').addClass("sticky")
+                } else {
+                    $('.naver').removeClass("sticky");
+                }
+            });
+
+            $('#submit-btn').on('click', function () {
+                var imageFile = $('#imagefile')[0].files[0];
+                console.log('imageFile', imageFile);
+                if (typeof imageFile !== 'undefined') {
+                    var formData = new FormData();
+                    formData.append("file", imageFile); // in API check for image key
+                    callAsync(formData);
+                } else {
+                    alert('No image has been selected');
+                }
+            });
+            function callAsync(formData) {
+                $.ajax({
+                    url: "https://reqres.in/api/users", // Change API endpoint
+                    data: formData,
+                    dataType: 'json',
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    type: 'POST',
+                    success: function (parsedResult) {
+                        console.log("Success!", parsedResult); // parsedResult variable holds the response from server
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
