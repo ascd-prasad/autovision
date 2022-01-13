@@ -1,1 +1,1 @@
-web: gunicorn autovision.app --log-file=-
+web: gunicorn autovision.main_app --log-file=-
