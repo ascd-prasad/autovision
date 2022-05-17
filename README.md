@@ -34,3 +34,39 @@ Year 2012 is having the most number of car makes from all company models.
 Sedan is having high presence in our data followed by SUV, convertible, Coupe, and hatchback models. Type-R models are very less in our data.
 
 ![type](https://github.com/ascd-prasad/autovision/blob/main/static/car-type.jpg)
+
+Here are some images of cars with bounding boxes
+
+![car1](https://github.com/ascd-prasad/autovision/blob/main/static/car1.jpg)
+
+![car2](https://github.com/ascd-prasad/autovision/blob/main/static/car2.jpg)
+
+### Deciding Model(s) and Model Building
+
+This Type of problems can be solved using `CNN models (Classification and regression)` and `RCNN models (Region based CNN)`.
+
+We have 2 different types of outputs for object detection:
+ `a. Category Label`
+ `b. Bounding Box`
+
+Biggest challenge in these types of problems is to get `region proposals`.
+
+If you are fanatic about accuracy, one can choose `Faster-RCNN`, and if you are strapped for computation, `SSD` is a better recommendation. However, if you want a faster computation and accuracy is a big concern or requirement we can opt for `YOLO`
+
+Here as we are working on cars data set real time identification is crucial hence SSD/ Yolo are the ideal choices.
+
+choosed `SSD Mobilenet` as the final model and used the popular `TensorFlow object detection API` to train our model.
+
+Fine-tuned the model by adjusting `base learning rate` and `warmup learning rate` and achieved `90% mAP` with `0.75 IOU` and `total loss` is settled at `0.35`.
+
+Developed a UI and `flask` web application and incorporated the model to predict the image class.
+
+upon uploading the Car Image, it will display the UPLOADED image.
+
+![UI-upload](https://github.com/ascd-prasad/autovision/blob/main/static/UI-UPLOAD.jpg)
+
+upon clicking the Prediction button, it will show the Car Image with Bounding Box along with Car Classification
+
+![car1-predict]((https://github.com/ascd-prasad/autovision/blob/main/static/CAR1-PREDICT.jpg)
+
+![car1-predict]((https://github.com/ascd-prasad/autovision/blob/main/static/CAR2-PREDICT.jpg)
