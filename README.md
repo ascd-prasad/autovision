@@ -1,57 +1,36 @@
-autovision
-==============================
+Autovision - Car Detection Project
+=================================
 
-Capstone CV project 
+Traditional way of Car identification relies on manual Human Intelligence.
+As intelligent and observant a human could be, it is practically difficult & inefficient to distinguish between the wide variety of vehicle makes and models. It becomes a laborious and time-consuming task for a human observer to monitor and observe the multitude of screens and record the incoming or outgoing makes and models or to even spot the make and model being looked for.
 
-Project Organization
-------------
+The task of detecting Car can be automated with Artificial Intelligence by leveraging the Convolutional Neural Nets.
 
-    ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
-    ├── README.md          <- The top-level README for developers using this project.
-    ├── data
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
-    │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
-    │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
-    │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
-    │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
-    │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
+Here Cars dataset contains 16,185 images of 196 classes of cars. The data is split into 8,144 training images and 8,041 testing images, where each class has been split roughly in a 50-50 split. Classes are typically at the level of Make, Model, Year, e.g. 2012 Tesla Model S or 2012 BMW M3 coupe. 
 
+### Step-by-step walks through the solution
 
---------
+The Cars dataset contains Training and Test images of 196 classes of cars. Captured the below details from Training and Test images:
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+![train-test](https://github.com/ascd-prasad/autovision/blob/main/static/train-test.jpg)
+
+ 
+Annotations files contains bounding box details for test images and train images.
+
+![Annotatons](https://github.com/ascd-prasad/autovision/blob/main/static/Annotatons.jpg)
+
+Merging both Dataset and Annotations into one data frame. Final Dataset sample:
+
+![final-dataset](https://github.com/ascd-prasad/autovision/blob/main/static/final-dataset.jpg)
+
+Here is the word cloud represents the high presence of keywords from car names and make file. Dataset has more presence of Sedan, SUV, Coupe, and convertible type models.
+
+![cloud](https://github.com/ascd-prasad/autovision/blob/main/static/cloud.jpg)
+
+Year 2012 is having the most number of car makes from all company models.
+
+![year](https://github.com/ascd-prasad/autovision/blob/main/static/year-bar.jpg)
+
+Sedan is having high presence in our data followed by SUV, convertible, Coupe, and hatchback models. Type-R models are very less in our data.
+
+![type](https://github.com/ascd-prasad/autovision/blob/main/static/car-type.jpg)
