@@ -46,8 +46,10 @@ Here are some images of cars with bounding boxes
 This Type of problems can be solved using `CNN models (Classification and regression)` and `RCNN models (Region based CNN)`.
 
 We have 2 different types of outputs for object detection:
+```
  `a. Category Label`
  `b. Bounding Box`
+```
 
 Biggest challenge in these types of problems is to get `region proposals`.
 
@@ -67,6 +69,6 @@ upon uploading the Car Image, it will display the UPLOADED image.
 
 upon clicking the Prediction button, it will show the Car Image with Bounding Box along with Car Classification
 
-![car1-predict]((https://github.com/ascd-prasad/autovision/blob/main/static/CAR1-PREDICT.jpg)
+![car1-predict](https://github.com/ascd-prasad/autovision/blob/main/static/CAR1-PREDICT.jpg)
 
-![car1-predict]((https://github.com/ascd-prasad/autovision/blob/main/static/CAR2-PREDICT.jpg)
+![car1-predict](https://github.com/ascd-prasad/autovision/blob/main/static/CAR2-PREDICT.jpg)
